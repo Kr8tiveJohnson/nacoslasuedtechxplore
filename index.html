@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechXplore | LASUED</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Grotesk:wght@300;400;700&display=swap');
+        
+        body { font-family: 'Space Grotesk', sans-serif; scroll-behavior: smooth; background-color: white; overflow-x: hidden; }
+        .font-tech { font-family: 'Orbitron', sans-serif; }
+        
+        .countdown-pill {
+            background: linear-gradient(135deg, #052e16 0%, #166534 50%, #052e16 100%);
+            border: 1px solid rgba(34, 197, 94, 0.4);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+        }
+
+        /* Modal Logic */
+        .modal { opacity: 0; pointer-events: none; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); transform: scale(0.95); visibility: hidden; }
+        .modal.active { opacity: 1; pointer-events: auto; transform: scale(1); visibility: visible; }
+
+        /* --- Scroll Animation Classes --- */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .reveal-left { opacity: 0; transform: translateX(-50px); transition: all 1s ease-out; }
+        .reveal-right { opacity: 0; transform: translateX(50px); transition: all 1s ease-out; }
+        .active-side { opacity: 1; transform: translateX(0); }
+    </style>
+</head>
+    <meta charset="UTF-8">
+    <title>TechXplore | LASUED</title>
+    
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/dus5lztio/image/upload/v1774346972/WhatsApp_Image_2026-03-24_at_03.09.05_qyb7ur.png">
+</head>
+<body class="text-slate-900">
+
+    <section class="min-h-screen flex flex-col items-center pt-12 text-center reveal">
+        <div class="flex items-center gap-6 mb-6">
+            <img src="https://res.cloudinary.com/dus5lztio/image/upload/v1774346974/photo_1_2025-06-01_14-49-18_dlpk36.png" alt="LASUED" class="h-16 md:h-20">
+            <img src="https://res.cloudinary.com/dus5lztio/image/upload/v1774346972/WhatsApp_Image_2026-03-24_at_03.09.05_qyb7ur.png" alt="NACOS" class="h-16 md:h-20">
+        </div>
+        
+        <h2 class="font-tech text-green-900 font-bold text-xs md:text-lg uppercase tracking-tight px-4 mb-4">
+            Nigeria Association of Computing Students<br>
+            Lagos State University of Education
+        </h2>
+
+        <p class="font-tech text-slate-400 tracking-[0.5em] uppercase text-[10px] mb-4">Present</p>
+
+        <div class="w-full max-w-2xl px-6 mb-8">
+            <img src="https://res.cloudinary.com/dus5lztio/image/upload/v1774342682/WhatsApp_Image_2026-03-20_at_09.51.15_1_wlfyta.png" alt="TechXplore" class="w-full h-auto drop-shadow-2xl">
+        </div>
+
+        <div class="w-full bg-green-900 py-12 md:py-20 relative shadow-2xl">
+            <div class="max-w-4xl mx-auto px-6 reveal">
+                <div class="countdown-pill rounded-3xl md:rounded-full py-8 px-6 md:px-16 flex justify-between items-center text-white">
+                    <div class="text-center"><span id="days" class="font-tech text-4xl md:text-7xl font-black block">00</span><p class="text-[9px] uppercase tracking-widest opacity-50">Days</p></div>
+                    <span class="font-tech text-3xl opacity-20">:</span>
+                    <div class="text-center"><span id="hours" class="font-tech text-4xl md:text-7xl font-black block">00</span><p class="text-[9px] uppercase tracking-widest opacity-50">Hours</p></div>
+                    <span class="font-tech text-3xl opacity-20">:</span>
+                    <div class="text-center"><span id="minutes" class="font-tech text-4xl md:text-7xl font-black block">00</span><p class="text-[9px] uppercase tracking-widest opacity-50">Mins</p></div>
+                    <span class="font-tech text-3xl opacity-20">:</span>
+                    <div class="text-center text-green-400"><span id="seconds" class="font-tech text-4xl md:text-7xl font-black block">00</span><p class="text-[9px] uppercase tracking-widest opacity-50">Secs</p></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="py-12 px-6 reveal">
+            <h3 class="font-tech text-sm font-bold text-slate-500 uppercase">Theme:</h3>
+            <h1 class="font-tech text-2xl md:text-5xl text-green-900 font-black max-w-4xl mx-auto leading-tight mt-2 uppercase">
+                Innovating Beyond The Classroom: The Tech Experience
+            </h1>
+        </div>
+    </section>
+
+<div class="flex flex-col md:flex-row justify-center gap-6">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSd6ZBG2vbOOzZdkRHpcAaOTI6CO4XSFnOvZ_k0Ud03vgr1bFQ/viewform?usp=header" 
+       target="_blank" 
+       class="group relative inline-block px-10 py-5 bg-green-900 text-white rounded-2xl font-tech font-bold text-sm tracking-widest overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-xl shadow-green-900/20 text-center">
+        <span class="relative z-10 uppercase">Register Now</span>
+        <div class="absolute inset-0 bg-green-600 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+    </a>
+
+                <button onclick="toggleModal('sponsor-modal')" class="group px-10 py-5 border-2 border-green-900 text-green-900 rounded-2xl font-tech font-bold text-sm tracking-widest hover:bg-green-900 hover:text-white transition-all hover:scale-105 active:scale-95">
+                    UPGRADE TO PARTNER
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="min-h-screen flex items-center bg-slate-50 px-8 py-24 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
+            <div class="reveal-left">
+                <h2 class="font-tech text-4xl md:text-6xl font-black text-green-900 mb-8 uppercase tracking-tighter">ABOUT<br>TECHXPLORE</h2>
+                <div class="space-y-6 text-slate-700 text-lg md:text-xl leading-relaxed">
+                    <p>Technological competence is a vital requirement for academic relevance, career advancement, and economic empowerment. TECHXPLORE LASUED is designed to bridge this gap by bringing students face-to-face with industry professionals.</p>
+                </div>
+                <div class="mt-8 inline-block bg-green-950 text-white px-6 py-2 rounded-md font-tech text-[10px] tracking-widest uppercase">Covie Led Administration</div>
+            </div>
+            <div class="reveal-right flex justify-center">
+                <img src="https://res.cloudinary.com/dus5lztio/image/upload/v1774346816/tech_robot_hv2df1.png" alt="Mascot" class="w-full max-w-md h-auto drop-shadow-2xl">
+            </div>
+        </div>
+    </section>
+
+<div id="register-modal" class="modal fixed inset-0 z-[100] flex items-center justify-center p-6">
+    <div class="absolute inset-0 bg-slate-950/90 backdrop-blur-sm" onclick="toggleModal('register-modal')"></div>
+    
+    <div class="relative bg-white w-full max-w-lg rounded-3xl p-8 md:p-10 shadow-2xl max-h-[90vh] overflow-y-auto">
+        <button onclick="toggleModal('register-modal')" class="absolute top-6 right-6 text-slate-400 hover:text-green-600 font-tech">✕</button>
+        
+        <h2 class="font-tech text-2xl text-green-900 font-black uppercase mb-8">Participant Registration</h2>
+        
+       <form id="registration-form" action="https://script.google.com/macros/s/AKfycbzmH1Q3kQv_7VF1TUyrODrTcBl47PLjP2XnqNpVuZ4FelXKx9pV69AGGBo58gXD8lA/exec" method="POST" class="space-y-3 px-2">
+    
+    <input type="text" name="_gotcha" style="display:none">
+
+    <input type="text" name="full_name" placeholder="Full Name" required 
+           class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-3.5 focus:ring-2 focus:ring-green-500 outline-none text-[16px]">
+    
+    <input type="email" name="email" placeholder="Email Address" required 
+           class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-3.5 focus:ring-2 focus:ring-green-500 outline-none text-[16px]">
+    
+    <div class="flex gap-3">
+        <select name="level" required 
+                class="w-1/3 bg-slate-50 border border-slate-200 rounded-2xl px-4 py-3.5 outline-none text-[16px] text-slate-500 bg-white">
+            <option value="" disabled selected>Level</option>
+            <option>100L</option>
+            <option>200L</option>
+            <option>300L</option>
+            <option>400L</option>
+        </select>
+
+        <select name="area_of_interest" required 
+                class="w-2/3 bg-slate-50 border border-slate-200 rounded-2xl px-4 py-3.5 outline-none text-[16px] text-slate-500 bg-white">
+            <option value="" disabled selected>Area of Interest</option>
+            <option>Quality Assurance</option>
+            <option>Web Development</option>
+            <option>Cyber security</option>
+            <option>Data Analysis</option>
+            <option>UI/UX Design</option>
+            <option>Product Management</option>
+        </select>
+    </div>
+
+    <select name="department" required 
+            class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-3.5 outline-none text-[16px] text-slate-500 bg-white">
+        <option value="" disabled selected>Department</option>
+        <option>Computer Science</option>
+        <option>Computer Science Education</option>
+        <option>Others</option>
+    </select>
+
+    <input type="text" name="referral_source" placeholder="How you heard about the event" required 
+           class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-3.5 focus:ring-2 focus:ring-green-500 outline-none text-[16px]">
+
+    <textarea name="expectations" placeholder="What do you hope to gain?" required rows="2" 
+              class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-5 py-3 focus:ring-2 focus:ring-green-500 outline-none text-[16px] resize-none"></textarea>
+
+    <div class="flex items-start gap-3 py-1">
+        <input type="checkbox" name="terms" id="consent" required 
+               class="mt-1 w-5 h-5 rounded border-slate-300 text-green-600">
+        <label for="consent" class="text-[11px] text-slate-500 leading-tight">
+            I agree to the <span class="text-green-700 font-bold underline cursor-pointer" onclick="toggleModal('terms-modal')">Terms & Conditions</span>
+        </label>
+    </div>
+
+    <button type="submit" class="w-full bg-green-900 text-white font-tech py-4 rounded-2xl uppercase tracking-[0.2em] text-[11px] font-black hover:bg-green-800 active:scale-95 transition-all shadow-lg">
+        Submit Registration
+    </button>
+</form> ```
+    </div>
+</div>
+
+    <div id="sponsor-modal" class="modal fixed inset-0 z-[100] flex items-center justify-center p-6">
+        <div class="absolute inset-0 bg-slate-950/90 backdrop-blur-sm" onclick="toggleModal('sponsor-modal')"></div>
+        <div class="relative bg-green-900 text-white w-full max-w-xl rounded-3xl p-8 md:p-12 shadow-2xl border border-green-400/20 overflow-hidden">
+            <button onclick="toggleModal('sponsor-modal')" class="absolute top-6 right-6 text-green-400 hover:text-white font-tech">✕</button>
+            <h2 class="font-tech text-2xl font-black uppercase mb-6 tracking-tighter italic">Partnership & Support</h2>
+            
+            <div class="bg-white/10 border border-white/20 rounded-2xl p-6 mb-8 backdrop-blur-md">
+                <p class="text-[10px] uppercase font-tech tracking-[0.3em] text-green-400 mb-2">Account Details</p>
+                <h3 class="text-xl font-bold mb-1 tracking-wider">2336422927</h3>
+                <p class="text-sm opacity-80 uppercase font-tech">UNITED BANK OF AFRICA (UBA) | NIGERIAN ASS OF COMPUTER SCIENCE STUDENTS NACOSS</p>
+            </div>
+
+            <h3 class="font-tech text-[10px] uppercase tracking-[0.3em] text-green-400 mb-4">Contact for Enquiries</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="border-l-2 border-green-500 pl-4 py-1">
+                    <p class="font-bold text-sm">Com. Samuel Covenant Oluwaseun</p>
+                    <p class="font-bold text-sm">PRESIDENT</p>
+                    <p class="opacity-60 text-xs">+234 901 830 1991</p>
+</p>
+                </div>
+                <div class="border-l-2 border-green-500 pl-4 py-1">
+                    <p class="font-bold text-sm">Com. Alade Yusuf Olamilekan</p>
+                    <p class="font-bold text-sm">Social Director I</p>
+                    <p class="opacity-60 text-xs">+234 903 350 0505</p>
+                </div>
+                <div class="border-l-2 border-green-500 pl-4 py-1">
+                    <p class="font-bold text-sm">Com. Agbeni Victor Jesutofunmi</p>
+                    <p class="font-bold text-sm">Social Director II</p>
+                    <p class="opacity-60 text-xs">+234 906 671 5365</p>
+                </div>
+            
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <section class="py-24 px-8 bg-white overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16 reveal">
+            <h2 class="font-tech text-3xl md:text-4xl font-black text-green-900 tracking-tighter uppercase">Organizing Committee</h2>
+            <div class="h-1 w-20 bg-green-500 mx-auto mt-4"></div>
+        </div>
+
+        <div id="committee-grid" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-10">
+            
+            <div class="text-center group reveal">
+                <div class="aspect-square bg-slate-100 rounded-3xl mb-4 border-2 border-slate-100 overflow-hidden group-hover:border-green-500 transition-all shadow-xl group-hover:scale-105 duration-500">
+                    <img src="https://res.cloudinary.com/dus5lztio/image/upload/v1774348546/covie_qfnwfu.png" alt="Member" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                </div>
+                <p class="font-bold text-slate-800 text-lg leading-tight">Samuel Convenant O.</p>
+                <p class="text-[10px] text-green-600 font-tech font-bold uppercase tracking-widest mt-1">President | NACOS LASUED</p>
+            </div>
+
+            <div class="text-center group reveal">
+                <div class="aspect-square bg-slate-100 rounded-3xl mb-4 border-2 border-slate-100 overflow-hidden group-hover:border-green-500 transition-all shadow-md group-hover:scale-105 duration-500">
+                    <img src="https://res.cloudinary.com/dus5lztio/image/upload/v1774348547/yus_my7jxi.png" alt="Member" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                </div>
+                <p class="font-bold text-slate-800 text-lg leading-tight">Alade Yusuf O.</p>
+                <p class="text-[10px] text-green-600 font-tech font-bold uppercase tracking-widest mt-1">CHAIRMAN</p>
+            </div>
+
+            <div class="hidden-member hidden text-center group">
+                <div class="aspect-square bg-slate-100 rounded-3xl mb-4 border-2 border-slate-100 overflow-hidden shadow-md group-hover:border-green-500 transition-all group-hover:scale-105 duration-500">
+                    <img src="https://res.cloudinary.com/dus5lztio/image/upload/v1774350723/sec_ubr37k.png" alt="Member" class="w-full h-full object-cover">
+                </div>
+                <p class="font-bold text-slate-800 text-lg leading-tight">Ikharo Joyce O.</p>
+                <p class="text-[10px] text-green-600 font-tech font-bold uppercase tracking-widest mt-1">SECRETARY</p>
+            </div>
+
+            <div class="hidden-member hidden text-center group">
+                <div class="aspect-square bg-slate-100 rounded-3xl mb-4 border-2 border-slate-100 overflow-hidden shadow-md group-hover:border-green-500 transition-all group-hover:scale-105 duration-500">
+                    <img src="https://res.cloudinary.com/dus5lztio/image/upload/v1774355737/1_xh0yqk.png" alt="Member" class="w-full h-full object-cover">
+                </div>
+                <p class="font-bold text-slate-800 text-lg leading-tight">Adediji O. Hannah</p>
+                <p class="text-[10px] text-green-600 font-tech font-bold uppercase tracking-widest mt-1">PRO 1</p>
+            </div>
+
+            <div class="hidden-member hidden text-center group">
+                <div class="aspect-square bg-slate-100 rounded-3xl mb-4 border-2 border-slate-100 overflow-hidden shadow-md group-hover:border-green-500 transition-all group-hover:scale-105 duration-500">
+                    <img src="https://res.cloudinary.com/dus5lztio/image/upload/v1774355737/2_vmw3wl.png" alt="Member" class="w-full h-full object-cover">
+                </div>
+                <p class="font-bold text-slate-800 text-lg leading-tight">Ojetola Rosannah</p>
+                <p class="text-[10px] text-green-600 font-tech font-bold uppercase tracking-widest mt-1">PRO 2</p>
+            </div>
+
+                     <div class="hidden-member hidden text-center group">
+                    <div class="aspect-square bg-slate-100 rounded-3xl mb-4 border-2 border-slate-100 overflow-hidden shadow-md group-hover:border-green-500 transition-all group-hover:scale-105 duration-500">
+                        <img src="https://res.cloudinary.com/dus5lztio/image/upload/v1774355737/3_vtzsgx.png" alt="Mascot" class="w-full max-w-md h-auto drop-shadow-2xl">
+                    </div>
+                    <p class="font-bold text-slate-800 text-lg leading-tight">Elonghene Abraham</p>
+                    <p class="text-[10px] text-green-600 font-tech font-bold uppercase tracking-widest mt-1">CONTENT CREATOR</p>
+                </div>
+
+                    <div class="hidden-member hidden text-center group">
+                    <div class="aspect-square bg-slate-100 rounded-3xl mb-4 border-2 border-slate-100 overflow-hidden shadow-md group-hover:border-green-500 transition-all group-hover:scale-105 duration-500">
+                        <img src="https://res.cloudinary.com/dus5lztio/image/upload/v1774355737/4_o4qh1z.png" alt="Mascot" class="w-full max-w-md h-auto drop-shadow-2xl">
+                    </div>
+                    <p class="font-bold text-slate-800 text-lg leading-tight">Johnson Ezekiel S.</p>
+                    <p class="text-[10px] text-green-600 font-tech font-bold uppercase tracking-widest mt-1">GRAPHIC DESIGNER</p>
+                </div>
+
+                    <div class="hidden-member hidden text-center group">
+                    <div class="aspect-square bg-slate-100 rounded-3xl mb-4 border-2 border-slate-100 overflow-hidden shadow-md group-hover:border-green-500 transition-all group-hover:scale-105 duration-500">
+                        <img src="https://res.cloudinary.com/dus5lztio/image/upload/v1774355737/5_kxrbrg.png" alt="Mascot" class="w-full max-w-md h-auto drop-shadow-2xl">
+                    </div>
+                    <p class="font-bold text-slate-800 text-lg leading-tight">Ilufoye Habeeb</p>
+                    <p class="text-[10px] text-green-600 font-tech font-bold uppercase tracking-widest mt-1">SPONSORSHIP</p>
+                </div>
+
+                    <div class="hidden-member hidden text-center group">
+                    <div class="aspect-square bg-slate-100 rounded-3xl mb-4 border-2 border-slate-100 overflow-hidden shadow-md group-hover:border-green-500 transition-all group-hover:scale-105 duration-500">
+                        <img src="https://res.cloudinary.com/dus5lztio/image/upload/v1774355738/6_of1mtp.png" alt="Mascot" class="w-full max-w-md h-auto drop-shadow-2xl">
+                    </div>
+                    <p class="font-bold text-slate-800 text-lg leading-tight">Lawal Kauthar</p>
+                    <p class="text-[10px] text-green-600 font-tech font-bold uppercase tracking-widest mt-1">RESOURCE PERSON</p>
+                </div>
+
+                    <div class="hidden-member hidden text-center group">
+                    <div class="aspect-square bg-slate-100 rounded-3xl mb-4 border-2 border-slate-100 overflow-hidden shadow-md group-hover:border-green-500 transition-all group-hover:scale-105 duration-500">
+                        <img src="https://res.cloudinary.com/dus5lztio/image/upload/v1774355738/7_koadhz.png" alt="Mascot" class="w-full max-w-md h-auto drop-shadow-2xl">
+                    </div>
+                    <p class="font-bold text-slate-800 text-lg leading-tight">Francis J Zashimi</p>
+                    <p class="text-[10px] text-green-600 font-tech font-bold uppercase tracking-widest mt-1">RESOURCE PERSON</p>
+                </div>
+
+                    <div class="hidden-member hidden text-center group">
+                    <div class="aspect-square bg-slate-100 rounded-3xl mb-4 border-2 border-slate-100 overflow-hidden shadow-md group-hover:border-green-500 transition-all group-hover:scale-105 duration-500">
+                        <img src="https://res.cloudinary.com/dus5lztio/image/upload/v1774355738/8_iyhyw3.png" alt="Mascot" class="w-full max-w-md h-auto drop-shadow-2xl">
+                    </div>
+                    <p class="font-bold text-slate-800 text-lg leading-tight">Lara Brand</p>
+                    <p class="text-[10px] text-green-600 font-tech font-bold uppercase tracking-widest mt-1">RESOURCE PERSON</p>
+                </div>
+
+                    <div class="hidden-member hidden text-center group">
+                    <div class="aspect-square bg-slate-100 rounded-3xl mb-4 border-2 border-slate-100 overflow-hidden shadow-md group-hover:border-green-500 transition-all group-hover:scale-105 duration-500">
+                        <img src="https://res.cloudinary.com/dus5lztio/image/upload/v1774355739/9_crdei2.png" alt="Mascot" class="w-full max-w-md h-auto drop-shadow-2xl">
+                    </div>
+                    <p class="font-bold text-slate-800 text-lg leading-tight">Hunuwhegbe Abraham J.</p>
+                    <p class="text-[10px] text-green-600 font-tech font-bold uppercase tracking-widest mt-1">MEMBER</p>
+                </div>
+
+                    <div class="hidden-member hidden text-center group">
+                    <div class="aspect-square bg-slate-100 rounded-3xl mb-4 border-2 border-slate-100 overflow-hidden shadow-md group-hover:border-green-500 transition-all group-hover:scale-105 duration-500">
+                        <img src="https://res.cloudinary.com/dus5lztio/image/upload/v1774355739/10_zvvn2k.png" alt="Mascot" class="w-full max-w-md h-auto drop-shadow-2xl">
+                    </div>
+                    <p class="font-bold text-slate-800 text-lg leading-tight">Al Ameen Jamaldeen A.</p>
+                    <p class="text-[10px] text-green-600 font-tech font-bold uppercase tracking-widest mt-1">MEMBER</p>
+                </div>
+                                
+             <div class="mt-20 text-center reveal">
+                <button id="load-more-btn" class="font-tech px-10 py-4 border-2 border-green-900 text-green-900 hover:bg-green-900 hover:text-white transition-all duration-300 rounded-xl text-[10px] font-bold tracking-[0.3em] uppercase">
+                    View Full Committee
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-8 bg-white border-t">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+            <div class="reveal-left">
+                <h2 class="font-tech text-3xl md:text-4xl font-black text-green-900 mb-6 uppercase">Event Location</h2>
+                <p class="font-bold text-lg text-slate-800">Prof. A.O.K NOAH LECTURE HALL</p>
+                <p class="text-slate-500">Staff Club Mami Market, LASUED, Oto, Lagos 102101, Lagos, Nigeria.</p>
+            </div>
+            <div class="reveal-right h-[350px] relative group rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+    <img src="https://res.cloudinary.com/dus5lztio/image/upload/v1774369200/WhatsApp_Image_2026-03-24_at_09.18.40_cfmjnp.jpg" 
+         alt="LASUED Map Placeholder" 
+         class="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700">
+    
+    <div class="absolute inset-0 bg-green-900/40 backdrop-blur-[2px] flex flex-col items-center justify-center p-6 text-center">
+        <div class="bg-white/90 backdrop-blur-md p-6 rounded-2xl shadow-xl border border-white/20 transform group-hover:scale-105 transition-transform duration-500">
+            <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4 animate-bounce">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+            </div>
+            <p class="font-tech text-[10px] text-green-700 font-bold uppercase tracking-widest mb-1">Interactive Map</p>
+            <h4 class="text-slate-900 font-bold text-lg mb-4">Prof. A.O.K NOAH LECTURE HALL</h4>
+            <a href="https://maps.google.com/?cid=273818520833210011&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="inline-block bg-green-900 text-white px-6 py-2 rounded-lg font-tech text-[10px] tracking-widest uppercase hover:bg-green-700 transition-colors">
+                Open in Maps
+            </a>
+        </div>
+    </div>
+</div>
+    </section>
+
+<section class="py-20 bg-slate-50 overflow-hidden">
+    <div class="max-w-4xl mx-auto px-6 flex flex-col items-center text-center">
+        
+        <div class="mb-10 w-full max-w-2xl">
+            <div class="flex justify-between items-end mb-3">
+                <div class="text-left">
+                    <p class="font-tech text-[10px] text-green-600 font-bold uppercase tracking-widest">Event Capacity</p>
+                    <h3 class="text-2xl font-black text-slate-900"><span id="live-total">2,450</span> / 3,000</h3>
+                </div>
+                <p id="goal-percent" class="font-tech text-sm font-bold text-green-700 underline">81% Full</p>
+            </div>
+            <div class="w-full h-4 bg-slate-200 rounded-full overflow-hidden p-1 border border-slate-300">
+                <div id="goal-bar" class="h-full bg-green-600 rounded-full transition-all duration-1000 ease-out" style="width: 81.6%"></div>
+            </div>
+        </div>
+
+        <div class="mb-10 w-full flex flex-col items-center">
+            <button onclick="shareTechXplore()" 
+                    class="flex items-center gap-3 bg-white border border-slate-200 px-6 py-3 rounded-full shadow-sm hover:shadow-md hover:border-green-500 transition-all active:scale-95 group">
+                <span class="text-lg">📢</span>
+                <span class="font-tech text-[10px] font-bold uppercase tracking-widest text-slate-500 group-hover:text-green-900">Invite Friends to hit 3k</span>
+            </button>
+            <p id="share-msg" class="text-[9px] text-green-600 font-bold uppercase mt-2 hidden">Link copied to clipboard!</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-lg mb-8">
+            <button onclick="castVote('yes')" id="btn-yes" class="group p-8 bg-white border-2 border-slate-100 rounded-3xl hover:border-green-500 transition-all active:scale-95 shadow-xl">
+                <span class="text-4xl mb-3 block">🔥</span>
+                <span class="font-tech text-[10px] font-bold uppercase tracking-widest text-slate-400 group-hover:text-green-600">I'm coming</span>
+                <span id="count-yes" class="text-3xl font-black text-green-900 mt-2 block">1,450</span>
+            </button>
+
+            <button onclick="castVote('no')" id="btn-no" class="group p-8 bg-white border-2 border-slate-100 rounded-3xl hover:border-slate-300 transition-all active:scale-95 shadow-xl">
+                <span class="text-4xl mb-3 block">⏳</span>
+                <span class="font-tech text-[10px] font-bold uppercase tracking-widest text-slate-400">Maybe Later</span>
+                <span id="count-no" class="text-3xl font-black text-slate-400 mt-2 block">120</span>
+            </button>
+        </div>
+
+        <p id="total-votes" class="w-full text-[10px] font-tech text-slate-400 uppercase tracking-[0.2em] font-bold">
+            Join 1,570 others who already responded
+        </p>
+
+    </div>
+</section>
+    <footer class="bg-slate-950 text-white py-20 px-8 text-center border-t-4 border-green-600 reveal">
+        <h3 class="font-tech text-xl mb-12 uppercase tracking-[0.6em] text-green-500">Contact Us</h3>
+        <div class="flex flex-col md:flex-row justify-center gap-8 mb-16">
+            <a href="https://www.instagram.com/nacos_lasued" class="px-10 py-4 bg-white/5 border border-white/10 rounded-xl hover:bg-green-600 transition-all font-bold tracking-widest text-[10px] uppercase">Instagram</a>
+            <a href="https://chat.whatsapp.com/CfDE3QfVb4514dEvLBsaA9" class="px-10 py-4 bg-white/5 border border-white/10 rounded-xl hover:bg-green-600 transition-all font-bold tracking-widest text-[10px] uppercase">WhatsApp</a>
+        </div>
+        <p class="text-white/20 text-[9px] font-tech tracking-[0.5em] uppercase">NACOS LASUED CHAPTER © 2026</p>
+    </footer>
+
+    <script>
+
+const scriptURL = 'https://script.google.com/macros/s/AKfycbzmH1Q3kQv_7VF1TUyrODrTcBl47PLjP2XnqNpVuZ4FelXKx9pV69AGGBo58gXD8lA/exec'
+const form = document.getElementById('registration-form')
+
+form.addEventListener('submit', e => {
+  e.preventDefault()
+  
+  // Visual feedback for the user
+  const submitBtn = form.querySelector('button[type="submit"]')
+  const originalText = submitBtn.innerText
+  submitBtn.innerText = "Processing..."
+  submitBtn.disabled = true
+
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => {
+        submitBtn.innerText = "Success! 🔥"
+        setTimeout(() => {
+            toggleModal('register-modal') // Closes the modal
+            form.reset() // Clears the form
+            submitBtn.innerText = originalText
+            submitBtn.disabled = false
+            alert('Registration Successful! See you at TechXplore.')
+        }, 1500)
+    })
+    .catch(error => {
+        console.error('Error!', error.message)
+        submitBtn.innerText = "Error! Try again"
+        submitBtn.disabled = false
+    })
+})
+
+function updateDisplay() {
+    // ... your existing yes/no count logic ...
+    const totalVoters = yesCount + noCount;
+    document.getElementById('total-votes').innerText = `Join ${totalVoters.toLocaleString()} others who already responded`;
+}
+function shareTechXplore() {
+    const shareData = {
+        title: 'TechXplore | LASUED 2026',
+        text: 'Join me at TechXplore! We are trying to hit 3,000 attendees. Register now!',
+        url: window.location.href // This automatically gets your website link
+    };
+
+    const shareMsg = document.getElementById('share-msg');
+
+    // Check if the browser supports native mobile sharing
+    if (navigator.share) {
+        navigator.share(shareData)
+            .catch((err) => console.log('Error sharing', err));
+    } else {
+        // Fallback for Desktop: Copy to clipboard
+        navigator.clipboard.writeText(window.location.href).then(() => {
+            shareMsg.classList.remove('hidden');
+            setTimeout(() => {
+                shareMsg.classList.add('hidden');
+            }, 3000);
+        });
+    }
+}
+
+// Initial Data
+let yesCount = 1450;
+let noCount = 0;
+const goal = 3000;
+
+function updateDisplay() {
+    const total = yesCount; // Goal is based on "Yes" clicks
+    const percentage = Math.min((total / goal) * 100, 100).toFixed(1);
+    
+    // Update Numbers
+    document.getElementById('count-yes').innerText = yesCount.toLocaleString();
+    document.getElementById('count-no').innerText = noCount.toLocaleString();
+    document.getElementById('live-total').innerText = yesCount.toLocaleString();
+    
+    // Update Progress Bar
+    document.getElementById('goal-bar').style.width = percentage + "%";
+    document.getElementById('goal-percent').innerText = Math.round(percentage) + "% Full";
+}
+
+function castVote(type) {
+    if (localStorage.getItem('hasVoted')) return; // Prevent double voting
+
+    if (type === 'yes') yesCount++;
+    else noCount++;
+
+    // Save to local storage so it stays when they refresh
+    localStorage.setItem('hasVoted', 'true');
+    
+    // Visual Feedback
+    updateDisplay();
+    
+    // Disable buttons
+    const bYes = document.getElementById('btn-yes');
+    const bNo = document.getElementById('btn-no');
+    bYes.disabled = true;
+    bNo.disabled = true;
+    bYes.style.opacity = "0.6";
+    bNo.style.opacity = "0.6";
+    
+    // Highlight their choice
+    document.getElementById(`btn-${type}`).classList.add('border-green-600', 'ring-8', 'ring-green-50');
+}
+
+// Run on page load
+window.onload = updateDisplay;
+
+function toggleModal(id) {
+    const modal = document.getElementById(id);
+    if (modal) {
+        // 1. Toggle the 'hidden' class to show/hide the element in the DOM
+        modal.classList.toggle('hidden');
+        
+        // 2. Toggle 'flex' to ensure it centers correctly when visible
+        modal.classList.toggle('flex');
+        
+        // 3. Add a slight timeout for the 'active' class to trigger the CSS transition
+        if (modal.classList.contains('flex')) {
+            setTimeout(() => {
+                modal.classList.add('active');
+            }, 10);
+            document.body.style.overflow = 'hidden'; // Stop background scroll
+        } else {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Enable background scroll
+        }
+    }
+}
+
+        // COUNTDOWN
+        const targetDate = new Date("May 19, 2026 10:00:00").getTime();
+        function update() {
+            const now = new Date().getTime();
+            const diff = targetDate - now;
+            if (diff < 0) return;
+            document.getElementById('days').innerText = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(2, '0');
+            document.getElementById('hours').innerText = String(Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+            document.getElementById('minutes').innerText = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+            document.getElementById('seconds').innerText = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
+        }
+        setInterval(update, 1000);
+        update();
+
+        // SCROLL REVEAL
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.classList.contains('reveal-left') || entry.target.classList.contains('reveal-right')) {
+                        entry.target.classList.add('active-side');
+                    } else {
+                        entry.target.classList.add('active');
+                    }
+                }
+            });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+    </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const loadMoreBtn = document.getElementById('load-more-btn');
+        const hiddenMembers = document.querySelectorAll('.hidden-member');
+
+        if (loadMoreBtn) {
+            loadMoreBtn.addEventListener('click', () => {
+                hiddenMembers.forEach((member, index) => {
+                    // 1. Remove Tailwind's display: none
+                    member.classList.remove('hidden');
+                    
+                    // 2. Trigger the slide-up animation with a delay
+                    setTimeout(() => {
+                        member.classList.add('reveal', 'active');
+                    }, index * 100);
+                });
+                
+                // 3. Hide the button after showing everyone
+                loadMoreBtn.style.display = 'none';
+            });
+        }
+    });
+</script>
+
+<div id="terms-modal" class="modal fixed inset-0 z-[110] hidden items-center justify-center p-6">
+    <div class="absolute inset-0 bg-slate-900/80 backdrop-blur-md" onclick="toggleModal('terms-modal')"></div>
+    <div class="relative bg-white w-full max-w-2xl rounded-3xl p-8 md:p-10 shadow-2xl max-h-[80vh] overflow-y-auto">
+        <button onclick="toggleModal('terms-modal')" class="absolute top-6 right-6 text-slate-400 hover:text-green-600 font-tech">✕</button>
+        
+        <h2 class="font-tech text-xl text-green-900 font-black uppercase mb-6 border-b pb-4">Terms & Data Usage</h2>
+        
+        <div class="space-y-6 text-slate-600 text-sm leading-relaxed text-left">
+            <div>
+                <h3 class="font-tech text-[10px] text-green-600 font-bold uppercase tracking-widest mb-2">01. Data Privacy</h3>
+                <p>By registering for TechXplore, you authorize NACOS LASUED to collect your data. This data will be used strictly for event check-in and certificate issuance.</p>
+            </div>
+            
+            <div>
+                <h3 class="font-tech text-[10px] text-green-600 font-bold uppercase tracking-widest mb-2">02. Media Consent</h3>
+                <p>Photos and videos will be taken during the event for promotional purposes. By attending, you consent to being recorded.</p>
+            </div>
+
+            <div>
+                <h3 class="font-tech text-[10px] text-green-600 font-bold uppercase tracking-widest mb-2">03. Certification</h3>
+                <p>Certificates will only be issued to registered attendees who complete the full session and sign the physical attendance sheet.</p>
+            </div>
+        </div>
+
+        <button onclick="toggleModal('terms-modal')" class="w-full mt-8 bg-slate-100 py-4 rounded-xl font-tech text-[10px] font-bold uppercase hover:bg-slate-200 transition-all">Close</button>
+    </div>
+</div>
+</body>
+</html>
